@@ -15,8 +15,8 @@
 */
 
 /* ..... twisty ..... */
-treechildren:-moz-tree-twisty { list-style-image: url("folder-panel/twisty.svg") !important; padding: 0 5px !important;}
-treechildren:-moz-tree-twisty(open) { list-style-image: url("folder-panel/twisty-expanded.svg") !important; padding: 0 5px !important;}
+treechildren:-moz-tree-twisty { list-style-image: url("folder-pane/twisty.svg") !important; padding: 0 5px !important;}
+treechildren:-moz-tree-twisty(open) { list-style-image: url("folder-pane/twisty-expanded.svg") !important; padding: 0 5px !important;}
 
 /******* Message view icons ********/
 #folderTree treechildren::-moz-tree-image, #threadTree treechildren::-moz-tree-image {
@@ -77,41 +77,76 @@ treechildren::-moz-tree-image(subjectCol, new) { list-style-image: url("message-
 /* ::::: Folder icons for menus   ::::: */
 
 /* Folders */
-treechildren::-moz-tree-image(folderNameCol) { list-style-image: url("folder-panel/folder.svg") !important; }
+treechildren::-moz-tree-image(folderNameCol) { list-style-image: url("folder-pane/folder.svg") !important; }
 
 /* Newsgroup */
-treechildren::-moz-tree-image(folderNameCol, serverType-nntp) { list-style-image: url("folder-panel/news.svg") !important; }
+treechildren::-moz-tree-image(folderNameCol, serverType-nntp) { list-style-image: url("folder-pane/news.svg") !important; }
 
 /* Feed */
-treechildren::-moz-tree-image(folderNameCol, isFeedFolder-true) { list-style-image: url("folder-panel/rss.svg") !important; }
+treechildren::-moz-tree-image(folderNameCol, isFeedFolder-true) { list-style-image: url("folder-pane/rss.svg") !important; }
 
-#folderTree treechildren::-moz-tree-image(folderNameCol, specialFolder-Inbox) { list-style-image: url("folder-panel/inbox.svg") !important; }
+#folderTree treechildren::-moz-tree-image(folderNameCol, specialFolder-Inbox) { list-style-image: url("folder-pane/inbox.svg") !important; }
 
 
-treechildren::-moz-tree-image(folderNameCol, specialFolder-Sent) { list-style-image: url("folder-panel/sent.svg") !important; }
+treechildren::-moz-tree-image(folderNameCol, specialFolder-Sent) { list-style-image: url("folder-pane/sent.svg") !important; }
 
-treechildren::-moz-tree-image(folderNameCol, specialFolder-Outbox) { list-style-image: url("folder-panel/outbox.svg") !important; }
+treechildren::-moz-tree-image(folderNameCol, specialFolder-Outbox) { list-style-image: url("folder-pane/outbox.svg") !important; }
 
-treechildren::-moz-tree-image(folderNameCol, specialFolder-Drafts) { list-style-image: url("folder-panel/drafts.svg") !important; }
+treechildren::-moz-tree-image(folderNameCol, specialFolder-Drafts) { list-style-image: url("folder-pane/drafts.svg") !important; }
 
-treechildren::-moz-tree-image(folderNameCol, specialFolder-Templates) { list-style-image: url("folder-panel/template.svg") !important; }
+treechildren::-moz-tree-image(folderNameCol, specialFolder-Templates) { list-style-image: url("folder-pane/template.svg") !important; }
 
-treechildren::-moz-tree-image(folderNameCol, specialFolder-Junk) { list-style-image: url("folder-panel/flame-junk.svg") !important; }
+treechildren::-moz-tree-image(folderNameCol, specialFolder-Junk) { list-style-image: url("folder-pane/flame-junk.svg") !important; }
 
-treechildren::-moz-tree-image(folderNameCol, specialFolder-Trash) { list-style-image: url("folder-panel/trash.svg") !important; }
+treechildren::-moz-tree-image(folderNameCol, specialFolder-Trash) { list-style-image: url("folder-pane/trash.svg") !important; }
 
-treechildren::-moz-tree-image(folderNameCol, specialFolder-Archive) { list-style-image: url("folder-panel/archive.svg") !important; }
+treechildren::-moz-tree-image(folderNameCol, specialFolder-Archive) { list-style-image: url("folder-pane/archive.svg") !important; }
 
-treechildren::-moz-tree-image(folderNameCol, specialFolder-Virtual) { list-style-image: url("folder-panel/folder-search.svg") !important; }
+treechildren::-moz-tree-image(folderNameCol, specialFolder-Virtual) { list-style-image: url("folder-pane/folder-search.svg") !important; }
 
 /** IMAP/POP/movemail account nodes */
-treechildren::-moz-tree-image(folderNameCol, isServer-true) { list-style-image: url("folder-panel/email-account.svg") !important; }
+treechildren::-moz-tree-image(folderNameCol, isServer-true) { list-style-image: url("folder-pane/email-account.svg") !important; }
 
 /* Local folders account node */
-treechildren::-moz-tree-image(folderNameCol, isServer-true, serverType-none) { list-style-image: url("folder-panel/local-account.svg") !important; }
+treechildren::-moz-tree-image(folderNameCol, isServer-true, serverType-none) { list-style-image: url("folder-pane/local-account.svg") !important; }
 
 /* News server */
-treechildren::-moz-tree-image(folderNameCol, isServer-true, serverType-nntp) { list-style-image: url("folder-panel/news.svg") !important; }
+treechildren::-moz-tree-image(folderNameCol, isServer-true, serverType-nntp) { list-style-image: url("folder-pane/news.svg") !important; }
 
 /* Feed account node */
-treechildren::-moz-tree-image(folderNameCol, isServer-true, serverType-rss) { list-style-image: url("folder-panel/news.svg") !important; }
+treechildren::-moz-tree-image(folderNameCol, isServer-true, serverType-rss) { list-style-image: url("folder-pane/news.svg") !important; }
+
+/* ::::: online/offline icons ::::: */
+
+#offline-status[offline="true"] {
+  list-style-image: url("communicator/offline.svg") !important;
+}
+
+#offline-status {
+  list-style-image: url("communicator/online.svg") !important;
+}
+
+radio[pane=paneGeneral] {
+  list-style-image: url("preferences/general.svg") !important;
+}
+radio[pane=paneDisplay] {
+  list-style-image: url("preferences/display.svg") !important;
+}
+radio[pane=paneCompose] {
+  list-style-image: url("preferences/composition.svg") !important;
+}
+radio[pane=paneChat] {
+  list-style-image: url("preferences/chat.svg") !important;
+}
+radio[pane=panePrivacy] {
+  list-style-image: url("preferences/privacy.svg") !important;
+}
+radio[pane=paneSecurity] {
+  list-style-image: url("preferences/security.svg") !important;
+}
+radio[pane=paneApplications] {
+  list-style-image: url("preferences/attachments.svg") !important;
+}
+radio[pane=paneAdvanced] {
+  list-style-image: url("preferences/advanced.svg") !important;
+}
