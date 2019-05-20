@@ -61,7 +61,7 @@ treechildren::-moz-tree-image(junkStatusCol, notjunk) { list-style-image: url("m
 /******** Message view reply etc *********/
 treechildren::-moz-tree-image(threadCol) {
   -moz-margin-end: 2px;
-  list-style-image: url("message-list/thread-light.png") !important;
+  list-style-image: url("message-list/thread.svg") !important;
 }
 
 treechildren::-moz-tree-image(subjectCol, forwarded) { list-style-image: url("message-list/forwarded.svg") !important; }
@@ -116,6 +116,15 @@ treechildren::-moz-tree-image(folderNameCol, isServer-true, serverType-nntp) { l
 /* Feed account node */
 treechildren::-moz-tree-image(folderNameCol, isServer-true, serverType-rss) { list-style-image: url("folder-pane/news.svg") !important; }
 
+#folderTree treechildren::-moz-tree-cell-text(folderNameCol, newMessages-true) {
+  font-weight: bold;
+  margin-left: -16px;
+  padding-left: 18px;
+  background-image: url("folder-pane/folder-new-star.svg");
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
 /* ::::: online/offline icons ::::: */
 
 #offline-status[offline="true"] {
@@ -149,4 +158,103 @@ radio[pane=paneApplications] {
 }
 radio[pane=paneAdvanced] {
   list-style-image: url("preferences/advanced.svg") !important;
+}
+
+#ReadMessages label {
+  background: url("accountcentral/read-messages.svg")  no-repeat !important;
+}
+
+#ReadMessages label:-moz-locale-dir(rtl) {
+  background: url("accountcentral/read-messages.svg") right no-repeat !important;
+}
+
+#ComposeMessage label {
+  background: url("accountcentral/write-message.svg")  no-repeat !important;
+}
+
+#ComposeMessage label:-moz-locale-dir(rtl) {
+  background: url("accountcentral/write-message.svg") right no-repeat !important;
+}
+
+#AccountSettings label {
+  background: url("accountcentral/account-settings.svg")  no-repeat !important;
+}
+
+#AccountSettings label:-moz-locale-dir(rtl) {
+  background: url("accountcentral/account-settings.svg") right no-repeat !important;
+}
+
+#CreateAccount label {
+  background: url("accountcentral/create-account.svg")  no-repeat !important;
+  background-position: 0% -2px !important;
+}
+
+#CreateAccount label:-moz-locale-dir(rtl) {
+  background: url("accountcentral/create-account.svg") right no-repeat !important;
+  background-position: 0% -2px !important;
+}
+
+#SearchMessages label {
+  background: url("accountcentral/search-messages.svg")  no-repeat !important;
+}
+
+#SearchMessages label:-moz-locale-dir(rtl) {
+  background: url("accountcentral/search-messages.svg") right no-repeat !important;
+}
+
+#CreateFilters label {
+  background: url("accountcentral/manage-filters.svg")  no-repeat !important;
+}
+
+#CreateFilters label:-moz-locale-dir(rtl) {
+  background: url("accountcentral/manage-filters.svg") right no-repeat !important;
+}
+
+#OfflineSettings label {
+  background: url("accountcentral/offline-settings.svg")  no-repeat !important;
+}
+
+#OfflineSettings label:-moz-locale-dir(rtl) {
+  background: url("accountcentral/offline-settings.svg") right no-repeat !important;
+}
+
+#SubscribeImapFolders label {
+  background: url("accountcentral/manage-imap.svg")  no-repeat !important;
+}
+
+#SubscribeImapFolders label:-moz-locale-dir(rtl) {
+  background: url("accountcentral/manage-imap.svg") right no-repeat !important;
+}
+
+#SubscribeNewsgroups label {
+  background: url("accountcentral/manage-newsgroups.svg")  no-repeat !important;
+}
+
+#SubscribeNewsgroups label:-moz-locale-dir(rtl) {
+  background: url("accountcentral/manage-newsgroups.svg") right no-repeat !important;
+}
+
+#SubscribeRSS label {
+  background: url("accountcentral/manage-rss.svg")  no-repeat !important;
+}
+
+#SubscribeRSS label:-moz-locale-dir(rtl) {
+  background: url("accountcentral/manage-rss.svg") right no-repeat !important;
+}
+
+#CreateAccountMail,
+#CreateAccountMovemail {
+  background: url("accountcentral/mail.svg")  no-repeat !important;
+}
+
+#CreateAccountChat {
+  background: url("accountcentral/chat.svg")  no-repeat !important;
+}
+
+#CreateAccountNewsgroups {
+  background: url("accountcentral/manage-news.svg")  no-repeat !important;
+}
+
+#CreateAccountRSS {
+  background: url("accountcentral/manage-rss.svg")  no-repeat !important;
 }
