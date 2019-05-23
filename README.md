@@ -9,8 +9,22 @@ Recommend use with Materia [GTK](https://github.com/nana-4/materia-theme)/[KDE](
 
 ## Installation
 
+#### Install Papirus icons
+
+```
+wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/thunderbird-theme-papirus/master/install.sh | env CUSTOM_COLOR=444444 sh
+```
+
+#### Install Papirus-Dark icons
+
 ```
 wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/thunderbird-theme-papirus/master/install.sh | sh
+```
+
+#### Install ePapirus icons
+
+```
+wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/thunderbird-theme-papirus/master/install.sh | env CUSTOM_COLOR=6e6e6e sh
 ```
 
 #### Uninstall

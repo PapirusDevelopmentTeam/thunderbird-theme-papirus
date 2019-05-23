@@ -27,6 +27,7 @@ EOF
 # these variables can be overwritten
 : "${DESTDIR:=$HOME/.thunderbird}"
 : "${TAG:=master}"
+: "${CUSTOM_COLOR:=}"
 : "${uninstall:=false}"
 
 _msg() {
@@ -53,13 +54,20 @@ _install() {
 
     if [ "$uninstall" = "false"  ]; then
         _msg "Installing Papirus Icons to '$chrome_dir' ..."
-
         mkdir -p "$chrome_dir"
         cp -R "$temp_dir/$gh_repo-$TAG/chrome/papirus-icons" \
             "$chrome_dir"/
         tee -a "$chrome_dir/userChrome.css" > /dev/null < \
             "$temp_dir/$gh_repo-$TAG/chrome/userChrome.css"
     fi
+}
+
+_recolor() {
+    test -n "$CUSTOM_COLOR" || return 0
+    _msg "Replacing colors ..."
+    find "$temp_dir/$gh_repo-$TAG/chrome/papirus-icons" \
+        -type f -name '*.svg' \
+        -exec sed -i'' -e "s/dfdfdf/${CUSTOM_COLOR?}/g" '{}' \;
 }
 
 _cleanup() {
@@ -79,6 +87,7 @@ if [ ! -f "$DESTDIR/profiles.ini" ]; then
 fi
 
 _download
+_recolor
 
 # run _install for each profile
 sed -n '/^Path/ s/Path=//p' "$DESTDIR/profiles.ini" | \
