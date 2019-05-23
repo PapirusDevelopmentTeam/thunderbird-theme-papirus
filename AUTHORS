@@ -6,10 +6,5 @@ Project maintainers:
   - Sergei Eremenko (https://github.com/SmartFinn)
     A developer, PPA maintainer
 
-Theme based on:
-
-  - Thunderbird Monterail (https://github.com/spymastermatt/thunderbird-monterail)
-    Authors: spymastermatt and Emanuele Concas (conema)
-    License: GPL-3.0
-
-  - Used CSS source code by Matthew Richardson
+Used CSS source code by Matthew Richardson and Thunderbird Team:
+https://wiki.mozilla.org/Thunderbird/Core_Team
