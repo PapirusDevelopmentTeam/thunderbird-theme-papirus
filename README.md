@@ -9,7 +9,7 @@ Recommend use with Materia [GTK](https://github.com/nana-4/materia-theme)/[KDE](
 
 ## Installation
 
-``
+```
 wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/thunderbird-theme-papirus/master/install.sh | sh
 ```
 
