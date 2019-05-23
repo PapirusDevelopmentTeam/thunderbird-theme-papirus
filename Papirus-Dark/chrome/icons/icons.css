@@ -72,7 +72,10 @@ treechildren::-moz-tree-image(subjectCol, replied, forwarded) { list-style-image
 
 treechildren::-moz-tree-image(subjectCol, new) { list-style-image: url("message-list/new.svg") !important; }
 
-
+treechildren::-moz-tree-image(DirCol) {
+  margin-inline-end: 2px;
+  list-style-image: url("message-list/addrbook.svg") !important;
+}
 
 /* ::::: Folder icons for menus   ::::: */
 
