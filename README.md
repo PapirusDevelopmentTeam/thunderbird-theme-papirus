@@ -13,6 +13,12 @@ Recommend use with Materia [GTK](https://github.com/nana-4/materia-theme)/[KDE](
 wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/thunderbird-theme-papirus/master/install.sh | sh
 ```
 
+#### Uninstall
+
+```
+wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/thunderbird-theme-papirus/master/install.sh | env uninstall=true sh
+```
+
 ## Recommendations
 
 We recommend use [FireTray](https://github.com/Ximi1970/FireTray) extension for better looking. Open **FireTray-Settings-Mail** set flag on **display custom icon** and write name `thunderbird-attention-panel`.

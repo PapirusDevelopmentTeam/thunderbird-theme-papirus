@@ -24,17 +24,13 @@ cat <<- EOF
 
 EOF
 
+# these variables can be overwritten
 : "${DESTDIR:=$HOME/.thunderbird}"
 : "${TAG:=master}"
+: "${uninstall:=false}"
 
 _msg() {
     echo "=>" "$@" >&2
-}
-
-_rm() {
-    # removes parent directories if empty
-    rm -rf "$1"
-    rmdir -p "$(dirname "$1")" 2>/dev/null || true
 }
 
 _download() {
@@ -45,26 +41,25 @@ _download() {
     tar -xzf "$temp_file" -C "$temp_dir"
 }
 
-_uninstall() {
-    for theme in "$@"; do
-        test -d "$DESTDIR/$theme" || continue
-        _msg "Deleting '$theme' ..."
-        _rm "$DESTDIR/$theme"
-    done
-}
-
 _install() {
     chrome_dir="$1/chrome"
 
-    _msg "Installing Papirus Icons to '$chrome_dir' ..."
     rm -rf "${chrome_dir?}/papirus-icons"
 
-    mkdir -p "$chrome_dir"
-    cp --backup="t" \
-        "$temp_dir/$gh_repo-$TAG/chrome/userChrome.css" \
-        "$chrome_dir"/
-    cp -R "$temp_dir/$gh_repo-$TAG/chrome/papirus-icons" \
-        "$chrome_dir"/
+    # delete import from userChrome.css
+    if [ -f "$chrome_dir/userChrome.css" ]; then
+        sed -i.bak '/papirus-icons/d' "$chrome_dir/userChrome.css"
+    fi
+
+    if [ "$uninstall" = "false"  ]; then
+        _msg "Installing Papirus Icons to '$chrome_dir' ..."
+
+        mkdir -p "$chrome_dir"
+        cp -R "$temp_dir/$gh_repo-$TAG/chrome/papirus-icons" \
+            "$chrome_dir"/
+        tee -a "$chrome_dir/userChrome.css" > /dev/null < \
+            "$temp_dir/$gh_repo-$TAG/chrome/userChrome.css"
+    fi
 }
 
 _cleanup() {
@@ -85,6 +80,7 @@ fi
 
 _download
 
+# run _install for each profile
 sed -n '/^Path/ s/Path=//p' "$DESTDIR/profiles.ini" | \
     while read -r profile_path; do
         if [ -d "$profile_path" ]; then
