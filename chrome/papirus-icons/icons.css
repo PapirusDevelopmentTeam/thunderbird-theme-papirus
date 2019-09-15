@@ -35,7 +35,7 @@ treechildren:-moz-tree-twisty(open) { list-style-image: url("folder-pane/twisty-
 }
 
 /* ..... thread column ..... */
-treechildren::-moz-tree-image(threadCol) { list-style-image: url("message-list/thread.svg") !important; }
+.threadColumnHeader { list-style-image: url("message-list/thread.svg") !important; }
 
 /* ..... read column ..... */
 .readColumnHeader { list-style-image: url("message-list/read-header.svg") !important; }
@@ -59,7 +59,7 @@ treechildren::-moz-tree-image(junkStatusCol, junk) { list-style-image: url("mess
 treechildren::-moz-tree-image(junkStatusCol, notjunk) { list-style-image: url("message-list/flame-empty.svg") !important; }
 
 /******** Message view reply etc *********/
-treechildren::-moz-tree-image(threadCol) {
+treechildren::-moz-tree-image(threadCol, container) {
   -moz-margin-end: 2px;
   list-style-image: url("message-list/thread.svg") !important;
 }
