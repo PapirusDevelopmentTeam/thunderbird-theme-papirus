@@ -9,6 +9,8 @@ Recommend use with Materia [GTK](https://github.com/nana-4/materia-theme)/[KDE](
 
 ## Installation
 
+**NOTE:** In Thunderbird 78+ is now set by default to ignore `userChrome.css`. Needs to manually set `toolkit.legacyUserProfileCustomizations.stylesheets` to **true** in the config editor (Tools → Options → General → <kbd>Config Editor...</kbd>) and then restart Thunderbird. See [details](http://forums.mozillazine.org/viewtopic.php?p=14873328#p14873328).
+
 #### Install Papirus icons
 
 ```
