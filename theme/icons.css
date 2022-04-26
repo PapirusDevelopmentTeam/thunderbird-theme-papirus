@@ -515,3 +515,18 @@ radio[pane=paneAdvanced] {
 .folderMenuItem[IsServer="true"][ServerType="none"] {
 	list-style-image: url("icons/folder-local.svg") !important;
 }
+
+/******* Tab icons ********/
+
+.tabmail-tab[type="folder"][SpecialFolder="Inbox"], 
+treechildren::-moz-tree-image(folderNameCol, specialFolder-Inbox) {
+	list-style-image: url("icons/mail.svg") !important;
+}
+
+.icon-holder[type="calendar"], .tabmail-tab[type="calendar"] {
+	list-style-image: url("icons/calendar.svg") !important;
+}
+
+.icon-holder[type="tasks"], .tabmail-tab[type="tasks"] {
+	list-style-image: url("icons/task-tab.svg") !important;
+}
