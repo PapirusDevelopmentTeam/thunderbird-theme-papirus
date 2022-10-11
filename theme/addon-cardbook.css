@@ -1,0 +1,17 @@
+.icon-holder[type="cardbookTab"],
+.tabmail-tab[type="cardbookTab"] {
+	list-style-image: url("icons/address.svg") !important;
+}
+
+#cardbookMenuItem {
+	list-style-image: url("icons/address.svg") !important;
+}
+
+#qfb-cardbook,
+#cardbookToolbarButton {
+	list-style-image: url("icons/address.svg") !important;
+}
+
+#cardbookTabButton {
+	list-style-image: url("icons/address.svg") !important;
+}
