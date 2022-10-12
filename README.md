@@ -20,16 +20,16 @@ This theme is supposed to work with current supported Thunderbird releases:
 ### Installation script
 Clone this repo and enter folder and run script:
 	
-	```sh
-	git clone https://github.com/PapirusDevelopmentTeam/thunderbird-theme-papirus && cd thunderbird-theme-papirus
-	./scripts/install.sh
-	```
+```sh
+git clone https://github.com/PapirusDevelopmentTeam/thunderbird-theme-papirus && cd thunderbird-theme-papirus
+./scripts/install.sh
+```
 
 #### Install script
-	```sh
-	./scripts/install.sh # Standard
-	./scripts/install.sh -f ~/.var/app/org.mozilla.Thunderbird/.thunderbird # Flatpak
-	```
+```sh
+./scripts/install.sh # Standard
+./scripts/install.sh -f ~/.var/app/org.mozilla.Thunderbird/.thunderbird # Flatpak
+```
 
 ##### Script options
 	- `-f <thunderbird_folder_path>` *optional*
